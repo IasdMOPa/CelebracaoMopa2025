@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Igreja Celebração 30 Anos",
             cover: "img/igreja-celebracao/igreja-celebracao-1.jpg", // Imagem de capa
             description: "Registros da celebração de 30 anos da igreja, com momentos marcantes e reformas.",
-            images: [
+            images: 
                 "img/igreja-celebracao/igreja-celebracao-1.jpg",
                 "img/igreja-celebracao/igreja-celebracao-2.jpg",
                 // Adicione mais imagens aqui, ex: "img/igreja-celebracao/igreja-celebracao-3.jpg"
-            ]
+            
         },
         {
             title: "Igreja Central Medicilândia",
