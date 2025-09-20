@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             images: [
                 "img/igreja-medicilandia/igreja-medicilandia-capa.jpg",
                 "img/igreja-medicilandia/igreja-medicilandia-1.jpg",
-                "img/igreja-medicilandia/igreja-medicilandia-2.jpg",
+                "img/igreja medicilandia:/igreja medicilandia 2.jpg",
             ]
         },
         {
