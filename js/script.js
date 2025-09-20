@@ -23,12 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Igreja Central Medicilândia",
-            cover: "img/igreja-medicilandia/igreja-medicilandia-capa.jpg",
+            cover: "img/igreja-medicilandia:/igreja-medicilandia-capa.jpg",
             description: "Veja as belas obras e a estrutura renovada da Igreja Central de Medicilândia.",
             images: [
-                "img/igreja-medicilandia/igreja-medicilandia-capa.jpg",
-                "img/igreja-medicilandia/igreja-medicilandia-1.jpg",
-                "img/igreja medicilandia:/igreja medicilandia 2.jpg",
+                "img/igreja-medicilandia:/igreja-medicilandia-capa.jpg",
+                "img/igreja-medicilandia:/igreja-medicilandia-1.jpg",
+                "img/igreja-medicilandia:/igreja medicilandia 2.jpg",
             ]
         },
         {
