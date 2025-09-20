@@ -1,0 +1,372 @@
+/* Variáveis de Cores */
+:root {
+    --primary-color: #004D40; /* Verde escuro, pode ser ajustado para a cor da MOPa */
+    --secondary-color: #607D8B; /* Cinza azulado */
+    --accent-color: #FFC107; /* Amarelo/Dourado para destaque */
+    --text-color: #333;
+    --light-bg: #f8f8f8;
+    --dark-bg: #222;
+    --white: #fff;
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Considere usar fontes do Google Fonts */
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: var(--white);
+    box-shadow: var(--shadow-light);
+    flex-wrap: wrap; /* Para responsividade */
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.logo {
+    height: 60px; /* Ajuste o tamanho do logo */
+    margin-right: 15px;
+}
+
+.site-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Ajuste a altura conforme necessário */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.6); /* Escurece a imagem para melhor contraste do texto */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente para o texto */
+    border-radius: 10px;
+}
+
+.welcome-title {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.welcome-message {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.btn-scroll {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-scroll:hover {
+    background-color: #e0b000;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    color: var(--white);
+    font-size: 2rem;
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Albums Grid (Mosaico) */
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo, mínimo de 300px */
+    gap: 30px;
+    padding: 50px 5%;
+    margin-top: -80px; /* Para sobrepor um pouco a seção hero */
+    position: relative;
+    z-index: 3; /* Garante que os álbuns fiquem acima do hero */
+}
+
+.album-card {
+    position: relative;
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none; /* Remover sublinhado do link */
+    color: var(--text-color);
+}
+
+.album-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-medium);
+}
+
+.album-card img {
+    width: 100%;
+    height: 250px; /* Altura fixa para as capas */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.album-card:hover img {
+    transform: scale(1.05);
+}
+
+.album-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.album-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--dark-bg);
+    color: var(--white);
+    text-align: center;
+    padding: 30px 5%;
+    margin-top: auto; /* Empurra o footer para a parte inferior */
+    font-size: 0.9rem;
+}
+
+.main-footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--dark-bg);
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-button {
+    color: var(--white);
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1010;
+}
+
+.modal-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 60px); /* Ajusta a altura para os botões */
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-gallery img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: none; /* Hidden by default, only active image is shown */
+    transition: opacity 0.3s ease;
+}
+
+.modal-gallery img.active {
+    display: block;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 1010;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .logo-area {
+        justify-content: center;
+    }
+    .site-title {
+        font-size: 1.5rem;
+        margin-top: 10px;
+    }
+    .hero-section {
+        height: 60vh;
+    }
+    .hero-content {
+        padding: 15px;
+    }
+    .welcome-title {
+        font-size: 2.5rem;
+    }
+    .welcome-message {
+        font-size: 1rem;
+    }
+    .albums-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        padding: 30px 5%;
+        margin-top: -50px;
+    }
+    .album-card img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 1.2rem;
+    }
+    .hero-section {
+        height: 50vh;
+    }
+    .welcome-title {
+        font-size: 2rem;
+    }
+    .welcome-message {
+        font-size: 0.9rem;
+    }
+    .btn-scroll {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
