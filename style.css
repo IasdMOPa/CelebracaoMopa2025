@@ -1,14 +1,19 @@
-/* Variáveis de Cores */
+/* Variáveis de Cores e Fontes */
 :root {
-    --primary-color: #004D40; /* Verde escuro, pode ser ajustado para a cor da MOPa */
-    --secondary-color: #607D8B; /* Cinza azulado */
-    --accent-color: #FFC107; /* Amarelo/Dourado para destaque */
-    --text-color: #333;
-    --light-bg: #f8f8f8;
-    --dark-bg: #222;
-    --white: #fff;
-    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
-    --shadow-medium: 0 8px 16px rgba(0, 0, 0, 0.2);
+    --primary-color: #004d40; /* Verde Escuro Adventista */
+    --secondary-color: #26a69a; /* Verde Água Adventista */
+    --accent-color: #ffb300; /* Amarelo/Dourado */
+    --text-color-dark: #333;
+    --text-color-light: #f5f5f5;
+    --background-light: #f9f9f9;
+    --background-dark: #2c2c2c;
+    --card-bg: #ffffff;
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+    /* Fontes */
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Open Sans', sans-serif;
 }
 
 /* Reset Básico */
@@ -19,13 +24,14 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif; /* Considere usar fontes do Google Fonts */
+    font-family: var(--font-body);
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--light-bg);
+    color: var(--text-color-dark);
+    background-color: var(--background-light);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    scroll-behavior: smooth;
 }
 
 /* Header */
@@ -33,55 +39,57 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 5%;
-    background-color: var(--white);
+    padding: 1rem 5%;
+    background-color: var(--card-bg);
     box-shadow: var(--shadow-light);
-    flex-wrap: wrap; /* Para responsividade */
+    flex-wrap: wrap;
+    gap: 15px; /* Espaço entre itens em telas menores */
 }
 
-.logo-area {
+.header-left {
     display: flex;
     align-items: center;
-    flex-grow: 1;
 }
 
-.logo {
+.header-logo {
     height: 60px; /* Ajuste o tamanho do logo */
     margin-right: 15px;
 }
 
-.site-title {
-    font-size: 1.8rem;
+.header-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
     font-weight: 700;
     color: var(--primary-color);
     margin: 0;
 }
 
-.social-links {
+.social-nav {
     display: flex;
-    gap: 15px;
+    gap: 18px;
 }
 
-.social-links a {
+.social-nav a {
     color: var(--secondary-color);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     transition: color 0.3s ease;
 }
 
-.social-links a:hover {
+.social-nav a:hover {
     color: var(--primary-color);
+    transform: translateY(-2px);
 }
 
 /* Hero Section */
 .hero-section {
     position: relative;
     width: 100%;
-    height: 80vh; /* Ajuste a altura conforme necessário */
+    height: 85vh; /* Altura generosa para a imagem de fundo */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--white);
+    color: var(--text-color-light);
     overflow: hidden;
 }
 
@@ -93,127 +101,134 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    filter: brightness(0.6); /* Escurece a imagem para melhor contraste do texto */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)); /* Escurece a imagem */
+    z-index: 2;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
-    max-width: 800px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente para o texto */
-    border-radius: 10px;
+    z-index: 3;
+    max-width: 900px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
 }
 
-.welcome-title {
-    font-size: 3.5rem;
-    margin-bottom: 15px;
-    font-weight: 800;
+.hero-welcome-title {
+    font-family: var(--font-heading);
+    font-size: 3.8rem;
+    margin-bottom: 20px;
     letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-.welcome-message {
-    font-size: 1.3rem;
+.hero-message {
+    font-family: var(--font-body);
+    font-size: 1.4rem;
     line-height: 1.8;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.btn-scroll {
-    display: inline-block;
+.scroll-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     background-color: var(--accent-color);
-    color: var(--dark-bg);
-    padding: 12px 30px;
-    border-radius: 5px;
+    color: var(--text-color-dark);
+    padding: 15px 35px;
+    border-radius: 50px;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: var(--shadow-light);
 }
 
-.btn-scroll:hover {
-    background-color: #e0b000;
+.scroll-button:hover {
+    background-color: #ffc83d;
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
 }
 
-.scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    color: var(--white);
-    font-size: 2rem;
-    z-index: 2;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Albums Grid (Mosaico) */
-.albums-grid {
+/* Albums Grid Container */
+.albums-grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo, mínimo de 300px */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* 320px é um bom tamanho mínimo */
     gap: 30px;
-    padding: 50px 5%;
-    margin-top: -80px; /* Para sobrepor um pouco a seção hero */
+    padding: 80px 5%; /* Mais padding superior para "respirar" */
+    margin-top: -100px; /* Sobrepõe a hero section */
     position: relative;
-    z-index: 3; /* Garante que os álbuns fiquem acima do hero */
+    z-index: 4; /* Garante que os álbuns fiquem acima de tudo */
 }
 
+/* Album Card */
 .album-card {
-    position: relative;
-    background-color: var(--white);
-    border-radius: 10px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    text-decoration: none; /* Remover sublinhado do link */
-    color: var(--text-color);
+    text-decoration: none;
+    color: var(--text-color-dark);
+    display: flex; /* Para flexbox interno do card */
+    flex-direction: column;
 }
 
 .album-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-medium);
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-hover);
 }
 
-.album-card img {
+.album-card-image {
     width: 100%;
-    height: 250px; /* Altura fixa para as capas */
+    height: 220px; /* Altura fixa para as capas */
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
 }
 
-.album-card:hover img {
-    transform: scale(1.05);
+.album-card:hover .album-card-image {
+    transform: scale(1.08);
 }
 
-.album-info {
+.album-card-info {
     padding: 20px;
     text-align: center;
+    flex-grow: 1; /* Para que o conteúdo se ajuste no card */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.album-info h3 {
-    font-size: 1.4rem;
+.album-card-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
     margin-bottom: 10px;
     color: var(--primary-color);
 }
 
 /* Footer */
 .main-footer {
-    background-color: var(--dark-bg);
-    color: var(--white);
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
     text-align: center;
     padding: 30px 5%;
-    margin-top: auto; /* Empurra o footer para a parte inferior */
+    margin-top: auto;
     font-size: 0.9rem;
+    border-top: 5px solid var(--primary-color);
 }
 
 .main-footer a {
@@ -232,23 +247,21 @@ body {
     z-index: 1000; /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Darker overlay */
     justify-content: center;
     align-items: center;
+    overflow-y: auto; /* Enable scroll if needed for very small screens */
 }
 
 .modal-content {
-    background-color: var(--dark-bg);
-    margin: auto;
+    background-color: var(--background-dark);
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     position: relative;
-    max-width: 90%;
-    max-height: 90%;
-    overflow: hidden;
+    max-width: 95%; /* Maior largura para imagens */
+    max-height: 95%; /* Maior altura */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -256,35 +269,37 @@ body {
 }
 
 .close-button {
-    color: var(--white);
+    color: var(--text-color-light);
     position: absolute;
     top: 15px;
     right: 25px;
-    font-size: 35px;
+    font-size: 40px;
     font-weight: bold;
     cursor: pointer;
     z-index: 1010;
 }
 
-.modal-gallery {
+.modal-gallery-images {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: calc(100% - 60px); /* Ajusta a altura para os botões */
+    flex-grow: 1; /* Permite que ocupe o espaço disponível */
+    max-height: calc(100% - 80px); /* Espaço para botões de navegação e título */
     position: relative;
     overflow: hidden;
 }
 
-.modal-gallery img {
+.modal-gallery-images img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    display: none; /* Hidden by default, only active image is shown */
-    transition: opacity 0.3s ease;
+    display: none; /* Hidden by default */
+    border-radius: 5px;
+    box-shadow: var(--shadow-medium);
 }
 
-.modal-gallery img.active {
+.modal-gallery-images img.active {
     display: block;
 }
 
@@ -292,81 +307,128 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--text-color-light);
     border: none;
-    padding: 10px 15px;
+    padding: 15px 20px;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 2.2rem;
     z-index: 1010;
-    border-radius: 5px;
+    border-radius: 50%; /* Botões redondos */
     transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px; /* Tamanho fixo */
+    height: 60px; /* Tamanho fixo */
 }
 
 .nav-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .prev-button {
-    left: 10px;
+    left: 20px;
 }
 
 .next-button {
-    right: 10px;
+    right: 20px;
 }
 
-
 /* Responsividade */
+@media (max-width: 1024px) {
+    .hero-welcome-title {
+        font-size: 3rem;
+    }
+    .hero-message {
+        font-size: 1.2rem;
+    }
+    .albums-grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        padding: 60px 4%;
+    }
+    .header-title {
+        font-size: 1.4rem;
+    }
+}
+
 @media (max-width: 768px) {
     .main-header {
         flex-direction: column;
         text-align: center;
-        gap: 15px;
+        gap: 1rem;
     }
-    .logo-area {
-        justify-content: center;
+    .header-left {
+        flex-direction: column;
+        text-align: center;
     }
-    .site-title {
-        font-size: 1.5rem;
-        margin-top: 10px;
+    .header-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
     }
     .hero-section {
-        height: 60vh;
+        height: 75vh;
     }
-    .hero-content {
-        padding: 15px;
-    }
-    .welcome-title {
+    .hero-welcome-title {
         font-size: 2.5rem;
     }
-    .welcome-message {
+    .hero-message {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    .scroll-button {
+        padding: 12px 25px;
         font-size: 1rem;
     }
-    .albums-grid {
+    .albums-grid-container {
         grid-template-columns: 1fr; /* Uma coluna em telas menores */
-        padding: 30px 5%;
-        margin-top: -50px;
+        padding: 40px 5%;
+        margin-top: -80px;
     }
-    .album-card img {
+    .album-card-image {
         height: 200px;
+    }
+    .album-card-info h3 {
+        font-size: 1.3rem;
+    }
+    .nav-button {
+        padding: 10px 15px;
+        font-size: 1.8rem;
+        width: 50px;
+        height: 50px;
     }
 }
 
 @media (max-width: 480px) {
-    .site-title {
+    .main-header {
+        padding: 1rem 3%;
+    }
+    .header-title {
+        font-size: 1.2rem;
+    }
+    .social-nav {
+        gap: 12px;
+    }
+    .social-nav a {
         font-size: 1.2rem;
     }
     .hero-section {
-        height: 50vh;
+        height: 65vh;
     }
-    .welcome-title {
+    .hero-welcome-title {
         font-size: 2rem;
     }
-    .welcome-message {
+    .hero-message {
         font-size: 0.9rem;
     }
-    .btn-scroll {
-        padding: 10px 20px;
-        font-size: 1rem;
+    .hero-content {
+        padding: 20px 15px;
+    }
+    .albums-grid-container {
+        padding: 30px 4%;
+    }
+    .nav-button {
+        left: 5px;
+        right: 5px;
     }
 }
