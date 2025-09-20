@@ -3,84 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-vindo à Missão Oeste do Pará</title>
+    <title>Boas-Vindas à Missão Oeste do Pará</title>
+    <link rel="stylesheet" href="style.css"> 
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <img src="img/logo_mopa.png" alt="Logo MOPa" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="#welcome">Início</a></li>
-                    <li><a href="#albums">Álbuns</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-            </nav>
+    <header class="main-header">
+        <div class="header-left">
+            <img src="img/logo_mopa.png" alt="Logo MOPa" class="header-logo">
+            <h1 class="header-title">Boas-Vindas à Missão Oeste do Pará</h1>
         </div>
+        <nav class="social-nav">
+            <a href="https://www.facebook.com/adventistasoestepa" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.youtube.com/@adventistasoestepa" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/adventistasoestepa/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.flickr.com/photos/adventistasoestepa/albums" target="_blank" aria-label="Flickr"><i class="fab fa-flickr"></i></a>
+        </nav>
     </header>
 
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Bem-vindo à Missão Oeste do Pará!</h1>
-            <p>É uma honra receber o presidente da Divisão Sul Americana. Conheça um pouco do nosso trabalho.</p>
-        </div>
-    </section>
+    <main>
+        <section class="hero-section">
+            <img src="img/hero_banner.jpg" alt="Igreja Adventista da Missão Oeste do Pará" class="hero-image">
+            <div class="hero-overlay"></div> <div class="hero-content">
+                <h2 class="hero-welcome-title">BEM-VINDO, PRESIDENTE!</h2>
+                <p class="hero-message">
+                    É com imensa alegria que a Missão Oeste do Pará o recebe! Convidamos você a testemunhar o fruto de nossa fé e dedicação através das transformações e obras que impactam vidas em nosso campo.
+                </p>
+                <a href="#albums-grid-section" class="scroll-button">Ver Nossas Obras <i class="fas fa-arrow-down"></i></a>
+            </div>
+        </section>
 
-    <section id="welcome" class="container">
-        <h2>Uma Jornada de Fé e Transformação</h2>
-        <p>A Missão Oeste do Pará tem o prazer de apresentar as grandes obras e reformas que temos realizado em nosso campo. Cada projeto é um testemunho do nosso compromisso com a comunidade e com o avanço da obra de Deus.</p>
-        <p>Esperamos que esta visita seja inspiradora e que reforce os laços de fé e missão que nos unem.</p>
-    </section>
+        <section id="albums-grid-section" class="albums-grid-container">
+            </section>
+    </main>
 
-    <section id="albums" class="container">
-        <h2>Nossas Obras e Reformas</h2>
-        <div class="gallery">
-            <div class="album-card">
-                <a href="albuns/igreja_celebracao.html">
-                    <img src="igreja_celebracao/igreja_celebracao_capa.jpg" alt="Igreja Celebração">
-                    <h3>Igreja Celebração</h3>
-                </a>
-            </div>
-            <div class="album-card">
-                <a href="albuns/igreja_medicilandia.html">
-                    <img src="igreja_medicilandia/igreja_medicilandia_capa.jpg" alt="Igreja Medicilândia">
-                    <h3>Igreja Medicilândia</h3>
-                </a>
-            </div>
-            <div class="album-card">
-                <a href="albuns/comunidade_sentir.html">
-                    <img src="comunidade_sentir/comunidade_sentir_capa.jpg" alt="Comunidade Sentir">
-                    <h3>Comunidade Sentir</h3>
-                </a>
-            </div>
-            <div class="album-card">
-                <a href="albuns/academia_iatai.html">
-                    <img src="academia_iatai/academia_iatai_capa.jpg" alt="Academia IATAI">
-                    <h3>Academia IATAI</h3>
-                </a>
-            </div>
-            <div class="album-card">
-                <a href="albuns/conservatorio_iatai.html">
-                    <img src="conservatorio_iatai/conservatorio_iatai_capa.jpg" alt="Conservatório IATAI">
-                    <h3>Conservatório IATAI</h3>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.facebook.com/adventistasoestepa" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.youtube.com/@adventistasoestepa" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.instagram.com/adventistasoestepa/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.flickr.com/photos/adventistasoestepa/albums" target="_blank"><i class="fab fa-flickr"></i></a>
-            </div>
-            <p>&copy; 2023 Missão Oeste do Pará. Todos os direitos reservados.</p>
-        </div>
+    <footer class="main-footer">
+        <p>&copy; 2024 Missão Oeste do Pará. Todos os direitos reservados.</p>
+        <p>Contato: <a href="mailto:contato@mopa.org.br">contato@mopa.org.br</a></p>
+        <p>Endereço: Avenida [Nome da Avenida], [Número] - [Bairro], Santarém - PA</p>
     </footer>
-</body>
+
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-gallery-images">
+                </div>
+            <button class="nav-button prev-button"><i class="fas fa-chevron-left"></i></button>
+            <button class="nav-button next-button"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> </body>
 </html>
