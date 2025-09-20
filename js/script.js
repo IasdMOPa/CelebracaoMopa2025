@@ -55,10 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Conservatório IATAI",
-            cover: "conservatorio iatai:/conservatorio iatai capa.jpg",
+            cover: "conservatorio-iatai:/conservatorio-iatai-capa.jpg",
             description: "Aprecie a beleza e a estrutura do novo Conservatório IATAI, dedicado à música e arte.",
             images: [
-                "img/conservatorio-iatai/conservatorio-iatai-capa.jpg",
+                "conservatorio-iatai:/conservatorio-iatai-capa.jpg",
                 "img/conservatorio-iatai/conservatorio-iatai-1.jpg",
                 "img/conservatorio-iatai/conservatorio-iatai-2.jpg",
                 "img/conservatorio-iatai/conservatorio-iatai-3.jpg",
